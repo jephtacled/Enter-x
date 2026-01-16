@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ENTER-X Business Directory</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif}
+body{margin:0;background:#f4f8ff;color:#1f2933}
+
+/* HEADER & FOOTER */
+header,footer{
+  background:#0f4c81;
+  color:white;
+  text-align:center;
+  padding:16px
+}
+footer{position:fixed;bottom:0;width:100%}
+
+/* PAGES */
+.page{display:none;padding:30px 20px 120px}
+.show{display:block}
+
+/* BUTTONS */
+button{
+  padding:12px 24px;
+  border:none;
+  border-radius:30px;
+  background:#d4af37;
+  font-weight:bold;
+  cursor:pointer
+}
+
+/* WELCOME */
+#welcome{
+  display:block;
+  text-align:center;
+  padding:90px 20px;
+  background:linear-gradient(135deg,#1e88e5,#64b5f6);
+  color:white
+}
+#welcome h2{font-size:40px}
+
+/* SERVICES */
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:20px;
+  max-width:900px;
+  margin:30px auto
+}
+.service-box{
+  background:white;
+  padding:25px;
+  border-radius:16px;
+  text-align:center;
+  font-weight:600;
+  cursor:pointer;
+  border-top:5px solid #d4af37;
+  box-shadow:0 10px 25px rgba(0,0,0,.1)
+}
+
+/* DIRECTORY */
+.filters{text-align:center;margin-bottom:20px}
+input,select{
+  padding:12px;
+  width:90%;
+  max-width:280px;
+  margin:6px;
+  border-radius:8px;
+  border:1px solid #cbd5e1
+}
+
+/* CARDS */
+.card{
+  background:white;
+  border-radius:18px;
+  padding:18px;
+  margin:25px auto;
+  max-width:520px;
+  box-shadow:0 15px 35px rgba(0,0,0,.1);
+  border-top:6px solid #d4af37
+}
+.card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:12px
+}
+.rating{color:#f1c40f;font-size:18px}
+
+/* PROFILE */
+.whatsapp{
+  display:block;
+  margin-top:20px;
+  padding:14px;
+  border-radius:40px;
+  background:#25d366;
+  color:white;
+  text-align:center;
+  font-size:18px;
+  text-decoration:none
+}
+.back-btn{
+  margin-bottom:20px;
+  background:#0f4c81;
+  color:white
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>ENTER-X</h1>
+</header>
+
+<!-- WELCOME PAGE -->
+<div id="welcome" class="page show">
+  <h2>Discover Trusted Student Services</h2>
+  <p>Find fashion designers, photographers, creatives & more</p>
+  <button onclick="go('services')">Get Started</button>
+</div>
+
+<!-- SERVICES PAGE -->
+<div id="services" class="page">
+  <h2 style="text-align:center">Select a Service</h2>
+
+  <div class="service-grid">
+    <div class="service-box" onclick="filterService('Hairdressing')">💇 Hairdressing</div>
+    <div class="service-box" onclick="filterService('Fashion')">👗 Fashion Design</div>
+    <div class="service-box" onclick="filterService('Photography')">📸 Photography</div>
+    <div class="service-box" onclick="filterService('Graphics')">🎨 Graphics</div>
+    <div class="service-box" onclick="filterService('Web')">💻 Web</div>
+  </div>
+
+  <div style="text-align:center">
+    <button onclick="viewAll()">View All Providers</button>
+  </div>
+</div>
+
+<!-- DIRECTORY -->
+<div id="directory" class="page">
+  <button class="back-btn" onclick="go('services')">⬅ Back</button>
+
+  <div class="filters">
+    <input id="search" placeholder="Search service or business">
+    <select id="location">
+      <option value="">All Locations</option>
+      <option>Abuja</option>
+      <option>Sokoto</option>
+      <option>Kaduna</option>
+      <option>Nasarawa</option>
+    </select>
+    <button onclick="searchBiz()">Search</button>
+  </div>
+
+  <div id="list"></div>
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="page">
+  <button class="back-btn" onclick="go('directory')">⬅ Back to Providers</button>
+  <div id="profileData"></div>
+</div>
+
+<footer>ENTER-X © 2026</footer>
+
+<script>
+const businesses = [
+ {
+  name:"Big T Clothings",
+  owner:"Theophilus Edward",
+  service:"Fashion",
+  services:["Native wear","Casual outfits","Measurements"],
+  location:["Abuja"],
+  rating:4,
+  whatsapp:"+2349168596866",
+  image:"https://i.ibb.co/0VFLjw8D/Screenshot-20260115-093709.png"
+ },
+ {
+  name:"Ella's Hairdressing & Make-Up",
+  owner:"Ella",
+  service:"Hairdressing",
+  services:["Braiding","Hair fixing","Makeup"],
+  location:["Sokoto","Kaduna"],
+  rating:5,
+  whatsapp:"+2349168596866",
+  image:"https://i.ibb.co/nN3Q9HvP/IMG-20251223-WA0018.jpg"
+ },
+ {
+  name:"Cuffter's Photo World",
+  owner:"Cuffter",
+  service:"Photography",
+  services:["Portraits","Event coverage","Photo editing"],
+  location:["Sokoto","Nasarawa"],
+  rating:4,
+  whatsapp:"+2348160162459",
+  image:"https://i.ibb.co/TDJkcqJq/IMG-20260113-WA0021.jpg"
+ },
+ {
+  name:"That-boy-Gad Graphics",
+  owner:"Gad",
+  service:"Graphics",
+  services:["Flyers","Logos","Brand identity"],
+  location:["Abuja","Kaduna"],
+  rating:4,
+  whatsapp:"+2347026207379",
+  image:"https://i.ibb.co/ch4gMp7b/Screenshot-20260113-111038.png"
+ },
+ {
+  name:"Loner's Web Hub",
+  owner:"Loner",
+  service:"Web",
+  services:["Websites","UI design","Branding"],
+  location:["Abuja","Kaduna"],
+  rating:5,
+  whatsapp:"+2349023186414",
+  image:"https://i.ibb.co/HfYVvWDq/IMG-20240731-WA0013.jpg"
+ }
+];
+
+let displayed = [...businesses];
+
+function go(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
+ document.getElementById(id).classList.add('show');
+}
+
+function display(list){
+ const div=document.getElementById("list");
+ div.innerHTML="";
+ if(list.length===0){
+  div.innerHTML="<p style='text-align:center'>No results found</p>";
+  return;
+ }
+ list.forEach((b,i)=>{
+  div.innerHTML+=`
+   <div class="card">
+    <img src="${b.image}">
+    <h3>${b.name}</h3>
+    <p>${b.service}</p>
+    <div class="rating">${"★".repeat(b.rating)}</div>
+    <button onclick="openProfile(${i})">View Profile</button>
+   </div>`;
+ });
+}
+
+function viewAll(){
+ displayed=[...businesses];
+ display(displayed);
+ go('directory');
+}
+
+function filterService(service){
+ displayed=businesses.filter(b=>b.service===service);
+ display(displayed);
+ go('directory');
+}
+
+function searchBiz(){
+ const q=document.getElementById("search").value.toLowerCase();
+ const loc=document.getElementById("location").value;
+
+ displayed=businesses.filter(b=>{
+  const textMatch=
+   b.name.toLowerCase().includes(q) ||
+   b.service.toLowerCase().includes(q) ||
+   b.services.join(" ").toLowerCase().includes(q);
+
+  const locMatch=loc===""||b.location.includes(loc);
+  return textMatch && locMatch;
+ });
+
+ display(displayed);
+}
+
+function openProfile(i){
+ const b=displayed[i];
+ document.getElementById("profileData").innerHTML=`
+  <div class="card">
+   <img src="${b.image}">
+   <h2>${b.name}</h2>
+   <p><b>Owner:</b> ${b.owner}</p>
+   <p><b>Service:</b> ${b.service}</p>
+   <p><b>Location:</b> ${b.location.join(", ")}</p>
+   <div class="rating">${"★".repeat(b.rating)}</div>
+   <h4>Services Offered</h4>
+   <ul>${b.services.map(s=>`<li>${s}</li>`).join("")}</ul>
+   <a class="whatsapp" href="https://wa.me/${b.whatsapp.replace("+","")}" target="_blank">
+    Chat on WhatsApp
+   </a>
+  </div>`;
+ go('profile');
+}
+</script>
+
+</body>
+</html>
