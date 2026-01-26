@@ -10,13 +10,23 @@
 body{margin:0;background:#f4f8ff;color:#1f2933}
 
 /* HEADER & FOOTER */
-header,footer{
+header, footer {
   background:#0f4c81;
   color:white;
   text-align:center;
-  padding:16px
+  padding:16px;
 }
-footer{position:fixed;bottom:0;width:100%}
+header nav a, footer a {
+  color:#ffd966;
+  margin:0 10px;
+  text-decoration:none;
+  font-weight:600;
+}
+footer {
+  position: relative;
+  margin-top: 50px;
+  width: 100%;
+}
 
 /* PAGES */
 .page{display:none;padding:30px 20px 120px}
@@ -28,9 +38,12 @@ button{
   border:none;
   border-radius:30px;
   background:#d4af37;
+  color: #000;
   font-weight:bold;
-  cursor:pointer
+  cursor:pointer;
+  transition: 0.3s;
 }
+button:hover { opacity: 0.8; }
 
 /* WELCOME */
 #welcome{
@@ -113,20 +126,51 @@ input,select{
 <body>
 
 <header>
-<h1>ENTER-X</h1>
+  <h1>ENTER-X</h1>
+  <nav>
+    <a href="#" onclick="go('welcome')">Home</a>
+    <a href="#" onclick="go('about')">About</a>
+    <a href="#" onclick="go('contact')">Contact</a>
+    <a href="#" onclick="go('privacy')">Privacy</a>
+  </nav>
 </header>
 
-<!-- WELCOME PAGE -->
 <div id="welcome" class="page show">
   <h2>Discover Trusted Student Services</h2>
   <p>Find fashion designers, photographers, creatives & more</p>
   <button onclick="go('services')">Get Started</button>
 </div>
 
-<!-- SERVICES PAGE -->
+<div id="about" class="page">
+  <h2 style="text-align:center">About ENTER-X</h2>
+  <div class="card">
+    <p>ENTER-X is a digital business directory created to help entrepreneurs, students, and skilled service providers showcase their businesses across Nigeria.</p>
+    <p>Our mission is to connect people with trusted local services while giving small businesses the online visibility they deserve.</p>
+    <p><b>ENTER-X — Get known around Nigeria.</b></p>
+  </div>
+</div>
+
+<div id="contact" class="page">
+  <h2 style="text-align:center">Contact Us</h2>
+  <div class="card">
+    <p>Want to upload your business or make enquiries?</p>
+    <p><b>WhatsApp:</b> 09023186414</p>
+    <p><b>Email:</b> enterxconnect@gmail.com</p>
+    <a class="whatsapp" href="https://wa.me/2349023186414" target="_blank">Chat with us on WhatsApp</a>
+  </div>
+</div>
+
+<div id="privacy" class="page">
+  <h2 style="text-align:center">Privacy Policy</h2>
+  <div class="card">
+    <p>ENTER-X respects your privacy. We only collect basic business information provided voluntarily for display on our platform.</p>
+    <p>We do not sell, rent, or share personal data with third parties. Images, names, and contact details remain the property of the business owner.</p>
+    <p>By using ENTER-X, you agree to this policy.</p>
+  </div>
+</div>
+
 <div id="services" class="page">
   <h2 style="text-align:center">Select a Service</h2>
-
   <div class="service-grid">
     <div class="service-box" onclick="filterService('Hairdressing')">💇 Hairdressing</div>
     <div class="service-box" onclick="filterService('Fashion')">👗 Fashion Design</div>
@@ -134,16 +178,13 @@ input,select{
     <div class="service-box" onclick="filterService('Graphics')">🎨 Graphics</div>
     <div class="service-box" onclick="filterService('Web')">💻 Web</div>
   </div>
-
   <div style="text-align:center">
     <button onclick="viewAll()">View All Providers</button>
   </div>
 </div>
 
-<!-- DIRECTORY -->
 <div id="directory" class="page">
   <button class="back-btn" onclick="go('services')">⬅ Back</button>
-
   <div class="filters">
     <input id="search" placeholder="Search service or business">
     <select id="location">
@@ -156,25 +197,26 @@ input,select{
     </select>
     <button onclick="searchBiz()">Search</button>
   </div>
-
   <div id="list"></div>
 </div>
 
-<!-- PROFILE -->
 <div id="profile" class="page">
   <button class="back-btn" onclick="go('directory')">⬅ Back to Providers</button>
   <div id="profileData"></div>
 </div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6290258846981527"
-     crossorigin="anonymous"></script>
-<footer>ENTER-X © 2026</footer>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6290258846981527" crossorigin="anonymous"></script>
+
+<footer>
+  <p>ENTER-X © 2026 | <a href="#" onclick="go('privacy')">Privacy Policy</a></p>
+</footer>
 
 <script>
 const businesses = [
  {
   name:"Big Tee Clothing and Fashion",
   owner:"Theophilus Edward",
-  service:"Tailoring and Fashion design",
+  service:"Fashion",
   services:["Native wear","Casual outfits","Measurements"],
   location:["Abuja"],
   rating:4,
@@ -185,7 +227,7 @@ const businesses = [
   name:"Ella's Briads & Make-over",
   owner:"Emmanuella Jacob",
   service:"Hairdressing",
-  services:["Braiding","Hair fixing","fixing of lashes","fixing of nails", "making of wigs", "locking of dreads","Makeup"],
+  services:["Braiding","Hair fixing","Makeup"],
   location:["Sokoto","Kaduna"],
   rating:5,
   whatsapp:"+2349168596866",
@@ -215,7 +257,7 @@ const businesses = [
   name:"Loner's Web Hub",
   owner:"Loner",
   service:"Web",
-  services:["Websites design and development","UI design and App Development","Graphics design","Branding"],
+  services:["Websites design","App Development","Graphics"],
   location:["Abuja","Kaduna"],
   rating:5,
   whatsapp:"+2349023186414",
@@ -228,15 +270,17 @@ const businesses = [
   services:["Flyers","Logos","Brand identity"],
   location:["Sokoto","Kwara"],
   rating:4,
-  whatsapp:"+234 816 343 4609",
+  whatsapp:"+2348163434609",
   image:"https://i.ibb.co/hJY2np7S/Screenshot-20260123-222550.png"
   }
 ];
+
 let displayed = [...businesses];
 
 function go(id){
  document.querySelectorAll('.page').forEach(p=>p.classList.remove('show'));
  document.getElementById(id).classList.add('show');
+ window.scrollTo(0,0);
 }
 
 function display(list){
@@ -277,13 +321,11 @@ function searchBiz(){
  displayed=businesses.filter(b=>{
   const textMatch=
    b.name.toLowerCase().includes(q) ||
-   b.service.toLowerCase().includes(q) ||
-   b.services.join(" ").toLowerCase().includes(q);
+   b.service.toLowerCase().includes(q);
 
   const locMatch=loc===""||b.location.includes(loc);
   return textMatch && locMatch;
  });
-
  display(displayed);
 }
 
@@ -299,7 +341,7 @@ function openProfile(i){
    <div class="rating">${"★".repeat(b.rating)}</div>
    <h4>Services Offered</h4>
    <ul>${b.services.map(s=>`<li>${s}</li>`).join("")}</ul>
-   <a class="whatsapp" href="https://wa.me/${b.whatsapp.replace("+","")}" target="_blank">
+   <a class="whatsapp" href="https://wa.me/${b.whatsapp.replace(/\+/g,"")}" target="_blank">
     Chat on WhatsApp
    </a>
   </div>`;
