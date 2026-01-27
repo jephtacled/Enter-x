@@ -112,5 +112,31 @@ const businesses = [
     <h3>Elegance, Artistry & Timeless Beauty</h3>
     <p>Our beauty philosophy is rooted in enhancing your natural features with a touch of modern glam. We don’t just apply products; we create a personalized experience that builds confidence and ensures you feel like the best version of yourself.</p>
     <p>Whether you are preparing for a wedding, celebrating a birthday, or attending a traditional event, Fortune’s Makeup and Beauty Home is your partner in aesthetic excellence.</p>`
-  }
+  },
+{
+    id: "klever-graphix",
+    name: "Klever Graphix",
+    owner: "Thomas Godwin",
+    category: "Graphics",
+    location: "Abuja", // Feel free to specify a city like "Lagos" or "Abuja" if preferred
+    rating: 5,
+    stars: "★★★★★",
+    whatsapp: "+2349035575020", // Update with Thomas's actual WhatsApp number
+    image: "https://i.ibb.co/QtGSHVw/FB-IMG-17695319005944531.jpg",
+    blog: `<p>At the heart of Klever Graphix is Thomas Godwin—a visionary designer, fine artist, and strategic thinker dedicated to the sophisticated art of visual communication. Over the years, Thomas has cultivated a reputation as a powerhouse in the Nigerian creative industry, known for a "clean" aesthetic that prioritizes clarity, intentionality, and modern elegance.</p>
+
+      <h3>The Philosophy of Design</h3>
+      <p>Thomas operates on the belief that great design is a bridge between a brand and its audience. He is a teamwork-driven professional who integrates himself into his clients' goals, acting as a "go-getter" who values precision and time-efficiency. His approach goes beyond simple decoration; he utilizes critical thinking to ensure every pixel serves a purpose—to connect, communicate, and convert.</p>
+
+      <h3>A Comprehensive Suite of Creative Solutions</h3>
+      <p>Under Thomas’s expert direction, Klever Graphix provides an end-to-end design experience, ensuring brands maintain a cohesive and premium look across all platforms:</p>
+      
+      <ul>
+        <li><strong>Strategic Brand Identity:</strong> Crafting iconic logos, custom typography, and psychological color palettes that command attention.</li>
+        <li><strong>High-Impact Marketing:</strong> From viral social media content to high-visibility flyers and digital assets that cut through the noise.</li>
+        <li><strong>Editorial & Physical Production:</strong> Expert layout for books, luxury magazines, and bespoke product packaging.</li>
+        <li><strong>Environmental Signage:</strong> Architectural signage for retail stores, hubs, and stadiums, ensuring brand presence at any scale.</li>
+      </ul>`
+  },
 ];
+
