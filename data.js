@@ -122,7 +122,7 @@ const businesses = [
     rating: 5,
     stars: "★★★★★",
     whatsapp: "+2349035575020", // Update with Thomas's actual WhatsApp number
-    image: "https://i.ibb.co/QtGSHVw/FB-IMG-17695319005944531.jpg",
+    image: "https://i.ibb.co/ZRY7gd59/Screenshot-20260127-182714-1.jpg",
     blog: `<p>At the heart of Klever Graphix is Thomas Godwin—a visionary designer, fine artist, and strategic thinker dedicated to the sophisticated art of visual communication. Over the years, Thomas has cultivated a reputation as a powerhouse in the Nigerian creative industry, known for a "clean" aesthetic that prioritizes clarity, intentionality, and modern elegance.</p>
 
       <h3>The Philosophy of Design</h3>
