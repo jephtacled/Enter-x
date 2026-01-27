@@ -2,15 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact & Complaints | ENTER-X</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Complaints | ENTER-X</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Ensuring the form elements look modern and consistent */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
+        }
+
+        /* This ensures all form elements are visible and stacked */
+        .form-section form {
+            display: flex;
+            flex-direction: column;
         }
 
         input, select, textarea {
@@ -21,14 +39,11 @@
             border: 1px solid #cbd5e1;
             box-sizing: border-box;
             font-family: inherit;
-        }
-
-        select {
-            background-color: white;
-            cursor: pointer;
+            display: block; /* Ensures they aren't hidden */
         }
 
         .btn {
+            background-color: #007bff; /* Default blue if var fails */
             background-color: var(--primary, #007bff);
             color: white;
             padding: 14px;
@@ -36,11 +51,7 @@
             border-radius: 10px;
             cursor: pointer;
             font-weight: bold;
-            transition: opacity 0.3s;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
+            width: 100%;
         }
 
         @media (max-width: 768px) {
@@ -51,6 +62,7 @@
     </style>
 </head>
 <body>
+
     <header>
         <h1>ENTER-X</h1>
         <nav>
@@ -64,58 +76,50 @@
 
     <div class="container">
         <div class="card">
-            <h2 style="color: var(--primary);">Customer Support & Compliance</h2>
+            <h2 style="color: var(--primary, #007bff);">Customer Support & Compliance</h2>
+            
             <div class="contact-grid">
                 
                 <div class="contact-info">
-                    <p>We value your feedback and take all reports seriously. Use this page to lodge a formal complaint or report a compliance issue regarding any business listed on our platform.</p>
-                    
-                    <div class="contact-method" style="margin-top: 25px;">
-                        <strong>💬 WhatsApp Support:</strong><br>
-                        <a href="https://wa.me/2349023186414" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: bold;">+234 902 318 6414</a>
-                    </div>
-                    
-                    <div class="contact-method" style="margin-top: 20px;">
-                        <strong>📧 Email:</strong><br>
-                        <a href="mailto:jephtaclef2020@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: bold;">jephtaclef2020@gmail.com</a>
-                    </div>
-                    
-                    <div style="margin-top: 25px; padding: 15px; background: #f8fafc; border-radius: 8px; border-left: 4px solid var(--primary);">
-                        <small><strong>Note:</strong> All compliance reports are reviewed by our team within 48 hours. Please provide as much detail as possible.</small>
-                    </div>
+                    <p>We value your feedback. Use this form to lodge a complaint or report a compliance issue.</p>
+                    <p><strong>💬 WhatsApp:</strong> +234 902 318 6414</p>
+                    <p><strong>📧 Email:</strong> jephtaclef2020@gmail.com</p>
                 </div>
 
                 <div class="form-section">
-                    <h3 style="color: var(--primary);">Submit a Report</h3>
-                    <form action="https://formspree.io/f/jephtaclef2020@gmail.com" method="POST">
+                    <h3 style="color: var(--primary, #007bff);">Submit a Report</h3>
+                    
+                    <form action="https://formspree.io/f/xjgwpqzj" method="POST">
                         
-                        <input type="text" name="full_name" placeholder="Your Full Name" required>
-                        <input type="email" name="email_address" placeholder="Your Email Address" required>
+                        <input type="text" name="name" placeholder="Your Full Name" required>
+                        
+                        <input type="email" name="email" placeholder="Your Email Address" required>
                         
                         <select name="issue_type" required>
                             <option value="" disabled selected>Nature of Submission</option>
-                            <option value="Customer Complaint">Customer Complaint</option>
-                            <option value="Compliance Violation">Compliance Violation</option>
-                            <option value="Report Business/Scam">Report Business/Scam</option>
-                            <option value="General Inquiry">General Inquiry</option>
+                            <option value="Complaint">Customer Complaint</option>
+                            <option value="Violation">Compliance Violation</option>
+                            <option value="Scam">Report Business/Scam</option>
+                            <option value="Inquiry">General Inquiry</option>
                         </select>
 
-                        <input type="text" name="reference_id" placeholder="Order ID or Business Name (If applicable)">
+                        <input type="text" name="ref_id" placeholder="Order ID or Business Name">
 
-                        <textarea name="complaint_details" placeholder="Describe the issue in detail..." rows="5" required></textarea>
+                        <textarea name="message" placeholder="Describe the issue in detail..." rows="5" required></textarea>
                         
-                        <input type="hidden" name="_subject" value="New Complaint/Compliance Report - ENTER-X">
+                        <input type="hidden" name="_subject" value="New ENTER-X Report">
                         
-                        <button type="submit" class="btn" style="width: 100%;">Submit Report</button>
+                        <button type="submit" class="btn">Submit Report</button>
                     </form>
-                </div>
 
+                </div>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 ENTER-X Nigeria. Empowering Student Entrepreneurs.</p>
+        <p>&copy; 2026 ENTER-X Nigeria.</p>
     </footer>
+
 </body>
 </html>
