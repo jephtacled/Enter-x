@@ -6,6 +6,7 @@ const businesses = [
     category: "Fashion",
     location: "Abuja",
     rating: 4,
+    stars: "★★★★☆",
     whatsapp: "2349085269325",
     image: "https://i.ibb.co/0VFLjw8D/Screenshot-20260115-093709.png",
     blog: `<p>Big Tee Clothing and Fashion is a premier fashion brand located in Abuja, Nigeria. We specialize in bespoke tailoring that blends traditional African aesthetics with modern, contemporary styles. Our mission is to provide high-quality, perfectly fitted native wear and casual outfits for the modern Nigerian student and professional.</p>
@@ -23,6 +24,7 @@ const businesses = [
     category: "Hairdressing",
     location: "Sokoto",
     rating: 5,
+    stars: "★★★★★",
     whatsapp: "2349168596866",
     image: "https://i.ibb.co/nN3Q9HvP/IMG-20251223-WA0018.jpg",
     blog: `<p>Ella’s Braids & Make-over is the go-to beauty hub for students in Sokoto and Kaduna. Founded by Emmanuella Jacob, our salon focuses on enhancing natural beauty through expert hair styling and professional makeup services.</p>
@@ -40,6 +42,7 @@ const businesses = [
     category: "Photography",
     location: "Sokoto, Nasarawa",
     rating: 4,
+    stars: "★★★★☆",
     whatsapp: "2348160162459",
     image: "https://i.ibb.co/TDJkcqJq/IMG-20260113-WA0021.jpg",
     blog: `<p>Cuffter's Photo World is a creative photography studio serving the needs of students and professionals in Sokoto and Nasarawa. Our lead photographer, Confidence Moses, specializes in portraiture, event coverage for weddings and matriculations, and professional photo editing.
@@ -54,6 +57,7 @@ const businesses = [
     category: "Graphics",
     location: "Abuja, Kaduna",
     rating: 4,
+    stars: "★★★★☆",
     whatsapp: "2347026207379",
     image: "https://i.ibb.co/ch4gMp7b/Screenshot-20260113-111038.png",
     blog: `<p>That-boy-Gad Graphics is a design studio dedicated to helping small businesses and student entrepreneurs stand out from the crowd. We provide comprehensive graphic design services ranging from professional logo creation to eye-catching flyers for social media marketing.
@@ -68,6 +72,7 @@ const businesses = [
     category: "Web",
     location: "Abuja, Kaduna",
     rating: 5,
+    stars: "★★★★★",
     whatsapp: "2349023186414",
     image: "https://i.ibb.co/HfYVvWDq/IMG-20240731-WA0013.jpg",
     blog: `<p>Loner's Web Hub is a full-service digital agency focused on bringing Nigerian businesses into the modern era. We specialize in custom website design, mobile app development, and high-level graphics.</p>
@@ -85,6 +90,7 @@ const businesses = [
     category: "Graphics",
     location: "Sokoto, Kwara",
     rating: 4,
+    stars: "★★★★☆",
     whatsapp: "2348163434609",
     image: "https://i.ibb.co/hJY2np7S/Screenshot-20260123-222550.png",
     blog: `<p>Julius Graphics is a creative studio operating out of Sokoto and Kwara, providing top-tier design solutions for the modern entrepreneur. Managed by Julius Joel, our studio is built on the foundation of creativity, reliability, and speed.
@@ -99,6 +105,7 @@ const businesses = [
     category: "Make-up",
     location: "Abuja, Kaduna",
     rating: 5,
+    stars: "★★★★★",
     whatsapp: "2347018717632",
     image: "https://i.ibb.co/N6jY5mXF/99079e0f6805412faaead113f089845b-1.jpg",
     blog: `<p>Fortune’s Makeup and Beauty Home is a premier beauty studio dedicated to helping women and event-goers stand out from the crowd. We provide comprehensive makeup services ranging from flawless bridal transformations to vibrant, eye-catching looks for social gatherings and celebrations.</p>

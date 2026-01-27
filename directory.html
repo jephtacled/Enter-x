@@ -63,6 +63,9 @@
                     <div class="card">
                         <img src="${b.image}" alt="${b.name}" style="width:100%; height:250px; object-fit:cover; border-radius:12px;">
                         <h3>${b.name}</h3>
+                        
+                        <div style="color: #FFD700; font-size: 1.2rem; margin-bottom: 10px;">${b.stars || ''}</div>
+                        
                         <p><strong>Category:</strong> ${b.category}<br><strong>Location:</strong> ${b.location}</p>
                         <a href="profile.html?id=${b.id}" class="btn" style="width:100%;">View Full Profile</a>
                     </div>`).join('');
