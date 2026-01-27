@@ -1,0 +1,33 @@
+:root { 
+  --primary: #0f4c81; 
+  --accent: #d4af37; 
+  --bg: #f4f8ff; 
+  --text: #1f2933; 
+  --white: #ffffff; 
+  --hero-bg: linear-gradient(135deg, #0f4c81 0%, #1a73e8 100%);
+}
+* { box-sizing: border-box; font-family: "Segoe UI", Roboto, sans-serif; }
+body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
+
+header { background: var(--primary); color: white; padding: 20px; position: sticky; top: 0; z-index: 100; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+header h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
+nav { margin-top: 10px; }
+nav a { color: #ffd966; margin: 0 12px; text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; }
+
+/* Professional Welcome Section */
+.hero { background: var(--hero-bg); color: white; padding: 80px 20px; text-align: center; }
+.hero h2 { font-size: 32px; margin: 0 0 15px 0; }
+.hero p { font-size: 18px; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 20px; min-height: 80vh; }
+.card { background: var(--white); border-radius: 20px; padding: 30px; margin-bottom: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); border-left: 8px solid var(--accent); }
+.card img { width: 100%; border-radius: 15px; margin-bottom: 25px; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 30px 0; }
+.box { background: white; padding: 25px; border-radius: 15px; text-align: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; color: var(--primary); font-weight: bold; }
+.box:hover { background: var(--primary); color: white; transform: translateY(-5px); }
+
+.btn { display: inline-block; background: var(--accent); color: #000; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; text-align: center; border: none; cursor: pointer; }
+.whatsapp-btn { background: #25d366; color: white; display: block; text-align: center; padding: 18px; margin-top: 30px; border-radius: 12px; text-decoration: none; font-weight: bold; }
+
+footer { text-align: center; padding: 50px 20px; background: var(--primary); color: white; margin-top: 60px; }

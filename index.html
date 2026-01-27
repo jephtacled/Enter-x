@@ -1,326 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>ENTER-X | Nigeria's Premier Student Business Directory</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Empowering the next generation of Nigerian entrepreneurs. Find trusted student-led fashion, tech, and creative services.">
-
-<style>
-  :root { --primary: #0f4c81; --accent: #d4af37; --bg: #f4f8ff; --text: #1f2933; --white: #ffffff; }
-  * { box-sizing: border-box; font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-  body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
-
-  header { background: var(--primary); color: white; padding: 20px; position: sticky; top: 0; z-index: 100; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-  header h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
-  nav { margin-top: 10px; }
-  nav a { color: #ffd966; margin: 0 12px; text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; }
-
-  .container { max-width: 900px; margin: 0 auto; padding: 20px; min-height: 80vh; }
-  
-  .filters { 
-    background: white; 
-    padding: 25px; 
-    border-radius: 16px; 
-    margin-bottom: 30px; 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-  }
-  input, select, textarea { padding: 14px; border-radius: 10px; border: 1px solid #cbd5e1; flex: 1; min-width: 180px; outline: none; font-size: 16px; }
-
-  .card { 
-    background: var(--white); 
-    border-radius: 20px; 
-    padding: 30px; 
-    margin-bottom: 40px; 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.06); 
-    border-left: 8px solid var(--accent);
-    transition: transform 0.3s ease;
-  }
-  .card:hover { transform: translateY(-5px); }
-  .card img { width: 100%; height: auto; max-height: 450px; object-fit: cover; border-radius: 15px; margin-bottom: 25px; }
-  
-  .rating { color: var(--accent); font-size: 24px; margin: 10px 0; }
-  .blog-content { color: #4a5568; font-size: 17px; text-align: justify; }
-  .blog-content h3 { color: var(--primary); margin-top: 30px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-
-  .btn { display: inline-block; background: var(--accent); color: #000; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; text-align: center; border: none; cursor: pointer; }
-  .btn-back { background: #e2e8f0; margin-bottom: 25px; font-size: 14px; }
-  .whatsapp-btn { background: #25d366; color: white; display: block; text-align: center; padding: 18px; margin-top: 30px; border-radius: 12px; text-decoration: none; font-weight: bold; font-size: 18px; }
-
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 30px 0; }
-  .box { background: white; padding: 25px; border-radius: 15px; text-align: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; }
-  .box:hover { background: var(--primary); color: white; }
-
-  /* Contact Form Specific Styles */
-  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-  .contact-method { margin-bottom: 20px; }
-  .contact-method a { color: var(--primary); font-weight: bold; text-decoration: none; }
-  form { display: flex; flex-direction: column; gap: 15px; }
-
-  footer { text-align: center; padding: 50px 20px; background: var(--primary); color: white; margin-top: 60px; }
-</style>
+    <meta charset="UTF-8">
+    <title>ENTER-X | Nigeria's Premier Student Business Directory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Empowering the next generation of Nigerian entrepreneurs. Find trusted student-led fashion, tech, and creative services.">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-  <h1>ENTER-X</h1>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#directory">Directory</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#privacy">Privacy</a>
-  </nav>
+    <h1>ENTER-X</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="directory.html">Directory</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy</a>
+    </nav>
 </header>
 
+<section class="hero" style="background: linear-gradient(135deg, #0f4c81 0%, #1a73e8 100%); color: white; padding: 80px 20px; text-align: center;">
+    <div class="container" style="min-height: auto;">
+        <h2 style="font-size: 36px; margin-bottom: 10px;">Empowering Nigeria's Student Entrepreneurs</h2>
+        <p style="font-size: 18px; opacity: 0.9; max-width: 700px; margin: 0 auto 30px;">
+            The premier directory connecting trusted student-led services with local customers. 
+            Discover quality, creativity, and excellence from the next generation.
+        </p>
+        <a href="directory.html" class="btn">Explore the Directory</a>
+    </div>
+</section>
+
 <div class="container">
-  <main id="content"></main>
+    
+    <h3 style="text-align:center; color: var(--primary); margin-top: 40px;">Browse by Category</h3>
+    <div class="grid">
+        <div class="box" onclick="location.href='directory.html?cat=Graphics'">🎨<br>Graphics</div>
+        <div class="box" onclick="location.href='directory.html?cat=Make-up'">💄<br>Makeup</div>
+        <div class="box" onclick="location.href='directory.html?cat=Fashion'">👗<br>Fashion</div>
+        <div class="box" onclick="location.href='directory.html?cat=Photography'">📸<br>Photos</div>
+        <div class="box" onclick="location.href='directory.html?cat=Web'">💻<br>Web Services</div>
+    </div>
+
+    <div class="card" style="border-left: 8px solid var(--primary); margin-top: 50px; background: #fdfdfd;">
+        <h3 style="margin-top: 0;">Insights & News</h3>
+        <p>Stay updated with tips and insights from the Nigerian student entrepreneurship scene.</p>
+        <hr style="border: 0; border-top: 1px solid #eee; margin: 15px 0;">
+        <a href="blog.html" style="color: var(--primary); font-weight: bold; text-decoration: none; display: flex; align-items: center; gap: 10px;">
+            <span>Read: 5 Benefits of Hiring Student Entrepreneurs in Nigeria</span>
+            <span style="font-size: 20px;">→</span>
+        </a>
+    </div>
+
 </div>
 
 <footer>
-  <p>&copy; 2026 ENTER-X Nigeria. Empowering Student Entrepreneurs.</p>
+    <p>&copy; 2026 ENTER-X Nigeria. Empowering Student Entrepreneurs.</p>
+    <nav style="margin-top: 15px;">
+        <a href="privacy.html" style="color: #ffd966; font-size: 13px; margin: 0 10px; text-decoration: none;">Privacy Policy</a> | 
+        <a href="terms.html" style="color: #ffd966; font-size: 13px; margin: 0 10px; text-decoration: none;">Terms & Conditions</a>
+    </nav>
 </footer>
-
-<script>
-const businesses = [
-  {
-    id: "big-tee-fashion",
-    name: "Big Tee Clothing and Fashion",
-    owner: "Theophilus Edward",
-    category: "Fashion",
-    location: "Abuja",
-    rating: 4,
-    whatsapp: "2349085269325",
-    image: "https://i.ibb.co/0VFLjw8D/Screenshot-20260115-093709.png",
-    blog: `<p>Big Tee Clothing and Fashion is a premier fashion brand located in Abuja, Nigeria. We specialize in bespoke tailoring that blends traditional African aesthetics with modern, contemporary styles. Our mission is to provide high-quality, perfectly fitted native wear and casual outfits for the modern Nigerian student and professional.</p>
-
-      <h3>Unmatched Craftsmanship</h3>
-      <p>At Big Tee, we believe that fashion is a form of self-expression. Every stitch we make is a testament to our commitment to quality. We source the finest fabrics from across the country—ranging from durable cottons to luxurious polished laces—to ensure durability and comfort. Whether you are looking for a sharp Senator suit for a formal event or a relaxed Agbada for a traditional wedding, our team of skilled tailors ensures that you stand out in every room you enter.</p>
-
-      <h3>Sustainability and Ethics</h3>
-      <p>We take pride in our ethical production process. By training local apprentices and supporting local textile markets, we contribute to the economic growth of our community. Our clothing isn't just a product; it's a piece of Nigerian heritage redesigned for the future. Join the Big Tee family today and experience the perfect blend of tradition and trend.</p>`
-  },
-  {
-    id: "ellas-braids",
-    name: "Ella's Braids & Make-over",
-    owner: "Emmanuella Jacob",
-    category: "Hairdressing",
-    location: "Sokoto",
-    rating: 5,
-    whatsapp: "2349168596866",
-    image: "https://i.ibb.co/nN3Q9HvP/IMG-20251223-WA0018.jpg",
-    blog:
-     `<p>Ella’s Braids & Make-over is the go-to beauty hub for students in Sokoto and Kaduna. Founded by Emmanuella Jacob, our salon focuses on enhancing natural beauty through expert hair styling and professional makeup services.</p>
-
-      <h3>Beauty Redefined</h3>
-      <p>We specialize in various styles, including knotless braids, traditional weaving, and hair fixing. Our makeup artists are trained to provide looks ranging from 'everyday natural' to 'glamorous party' styles. We use only skin-friendly products and maintain the highest standards of hygiene. Our goal is to ensure every client walks out of our studio feeling confident, beautiful, and ready to take on the world.</p>
-
-      <h3>Client-Centered Approach</h3>
-      <p>What sets us apart is our attention to detail and our commitment to customer satisfaction. We understand that your hair is your crowning glory. That’s why we take the time to consult with you before every session, ensuring we understand your hair type and desired look perfectly. From campus events to weddings, Ella's Braids is here to make sure you shine.</p>`
-  },
-  {
-    id: "cuffters-photo",
-    name: "Cuffter's Photo World",
-    owner: "Confidence Moses",
-    category: "Photography",
-    location: "Sokoto, Nasarawa",
-    rating: 4,
-    whatsapp: "2348160162459",
-    image: "https://i.ibb.co/TDJkcqJq/IMG-20260113-WA0021.jpg",
-    blog: `Cuffter's Photo World is a creative photography studio serving the needs of students and professionals in Sokoto and Nasarawa. Our lead photographer, Confidence Moses, specializes in portraiture, event coverage for weddings and matriculations, and professional photo editing.
-
-    <h3>Framing Your Memories</h3>
-    We use state-of-the-art equipment to ensure that every frame tells a story. Whether you are building a professional LinkedIn profile or capturing the joy of a graduation ceremony, Cuffter's Photo World delivers images that last a lifetime. We believe that photography is an art form, and we take pride in our ability to capture the unique personality and spirit of every subject we photograph.`
-  },
-  {
-    id: "that-boy-gad",
-    name: "That-boy-Gad Graphics",
-    owner: "Gad",
-    category: "Graphics",
-    location: "Abuja, Kaduna",
-    rating: 4,
-    whatsapp: "2347026207379",
-    image: "https://i.ibb.co/ch4gMp7b/Screenshot-20260113-111038.png",
-    blog: `That-boy-Gad Graphics is a design studio dedicated to helping small businesses and student entrepreneurs stand out from the crowd. We provide comprehensive graphic design services ranging from professional logo creation to eye-catching flyers for social media marketing.
-
-    <h3>Visual Identity & Branding</h3>
-    Our design philosophy is rooted in modern minimalism and high impact. We don't just create designs; we build visual bridges between businesses and their target audience. If you are looking to launch a brand or refresh your current look in Abuja or Kaduna, That-boy-Gad Graphics is your partner in creative excellence. We work closely with our clients to understand their vision and translate it into a compelling visual identity.`
-  },
-  {
-    id: "loners-web",
-    name: "Loner's Web Hub",
-    owner: "Loner",
-    category: "Web",
-    location: "Abuja, Kaduna",
-    rating: 5,
-    whatsapp: "2349023186414",
-    image: "https://i.ibb.co/HfYVvWDq/IMG-20240731-WA0013.jpg",
-    blog: `<p>Loner's Web Hub is a full-service digital agency focused on bringing Nigerian businesses into the modern era. We specialize in custom website design, mobile app development, and high-level graphics.</p>
-
-      <h3>Digital Excellence</h3>
-      <p>We focus on building responsive, fast-loading, and SEO-friendly websites that don't just look good but actually convert visitors into customers. From simple portfolio sites for freelancers to complex e-commerce platforms, Loner's Web Hub provides the technical backbone your business needs to succeed in the digital economy. We use the latest technologies like React, Node.js, and modern CSS frameworks to ensure your site is future-proof.</p>
-
-      <h3>Empowering Small Businesses</h3>
-      <p>We believe that every Nigerian entrepreneur deserves a world-class digital presence. Our packages are designed to be affordable yet powerful, giving you the tools you need to compete on a global scale. Beyond just development, we offer ongoing maintenance and digital strategy consulting to help you scale your business effectively.</p>`
-  },
-  {
-    id: "julius-graphics",
-    name: "Julius Graphics",
-    owner: "Julius Joel",
-    category: "Graphics",
-    location: "Sokoto, Kwara",
-    rating: 4,
-    whatsapp: "2348163434609",
-    image: "https://i.ibb.co/hJY2np7S/Screenshot-20260123-222550.png",
-    blog:`Julius Graphics is a creative studio operating out of Sokoto and Kwara, providing top-tier design solutions for the modern entrepreneur. Managed by Julius Joel, our studio is built on the foundation of creativity, reliability, and speed.
-
-    <h3>Creative Design Solutions</h3>
-    We specialize in high-quality flyer designs, corporate logos, and comprehensive brand identity packages. We understand the fast-paced nature of student entrepreneurship, which is why we offer quick turnaround times without compromising on quality. Julius Graphics is committed to helping local brands achieve a professional look that rivals international standards. We believe that great design should be accessible to everyone.`
-  },
-  {
-    id: "fortunes-makeup",
-    name: "Fortune's make-up & beauty home",
-    owner: "Fortune",
-    category: "Make-up",
-    location: "Abuja, Kaduna",
-    rating: 5,
-    whatsapp: "2347018717632",
-    image: "https://i.ibb.co/N6jY5mXF/99079e0f6805412faaead113f089845b-1.jpg",
-    blog:`<p>Fortune’s Makeup and Beauty Home is a premier beauty studio dedicated to helping women and event-goers stand out from the crowd. We provide comprehensive makeup services ranging from flawless bridal transformations to vibrant, eye-catching looks for social gatherings and celebrations.</p>
-    <h3>Elegance, Artistry & Timeless Beauty</h3>
-    <p>Our beauty philosophy is rooted in enhancing your natural features with a touch of modern glam. We don’t just apply products; we create a personalized experience that builds confidence and ensures you feel like the best version of yourself.</p>
-    <p>Whether you are preparing for a wedding, celebrating a birthday, or attending a traditional event, Fortune’s Makeup and Beauty Home is your partner in aesthetic excellence.</p>`
-  }
-];
-
-function router() {
-  const path = window.location.hash || '#home';
-  const app = document.getElementById('content');
-  
-  if (path === '#home') renderHome(app);
-  else if (path.startsWith('#directory')) renderDirectory(app, path);
-  else if (path.startsWith('#profile/')) renderProfile(app, path.split('/')[1]);
-  else if (path === '#about') renderAbout(app);
-  else if (path === '#contact') renderContact(app);
-  else if (path === '#privacy') renderPrivacy(app);
-  window.scrollTo(0,0);
-}
-
-function renderHome(app) {
-  app.innerHTML = `
-    <div style="text-align:center; padding: 40px 0;">
-      <h2>Discover Student Talent</h2>
-      <p>Connecting Nigeria's brightest entrepreneurs with local customers.</p>
-      <div class="grid">
-        <div class="box" onclick="location.hash='#directory/Graphics'">🎨<br>Graphics</div>
-        <div class="box" onclick="location.hash='#directory/Make-up'">💄<br>Makeup</div>
-        <div class="box" onclick="location.hash='#directory/Fashion'">👗<br>Fashion</div>
-        <div class="box" onclick="location.hash='#directory/Photography'">📸<br>Photos</div>
-        <div class="box" onclick="location.hash='#directory/Web'">💻<br>Web</div>
-      </div>
-      <a href="#directory" class="btn">View All Businesses</a>
-    </div>`;
-}
-
-function renderDirectory(app, path) {
-  const catParam = path.split('/')[1] || "";
-  app.innerHTML = `
-    <div class="filters">
-      <input type="text" id="searchInput" placeholder="Search name..." onkeyup="filterDirectory()">
-      <select id="categorySelect" onchange="filterDirectory()">
-        <option value="">All Services</option>
-        <option value="Graphics" ${catParam==='Graphics'?'selected':''}>Graphics</option>
-        <option value="Make-up" ${catParam==='Make-up'?'selected':''}>Make-up</option>
-        <option value="Fashion" ${catParam==='Fashion'?'selected':''}>Fashion</option>
-        <option value="Hairdressing" ${catParam==='Hairdressing'?'selected':''}>Hairdressing</option>
-        <option value="Photography" ${catParam==='Photography'?'selected':''}>Photography</option>
-        <option value="Web" ${catParam==='Web'?'selected':''}>Web</option>
-      </select>
-    </div>
-    <div id="bizList"></div>`;
-  filterDirectory(); 
-}
-
-function filterDirectory() {
-  const query = document.getElementById('searchInput')?.value.toLowerCase() || "";
-  const cat = document.getElementById('categorySelect')?.value || "";
-  const filtered = businesses.filter(b => (b.name.toLowerCase().includes(query) && (cat === "" || b.category === cat)));
-  document.getElementById('bizList').innerHTML = filtered.map(b => `
-    <div class="card">
-      <img src="${b.image}" alt="${b.name}" onerror="this.src='https://via.placeholder.com/400x250?text=Image'">
-      <h3>${b.name}</h3>
-      <p><strong>${b.category}</strong> • ${b.location}</p>
-      <div class="rating">${"★".repeat(b.rating)}</div>
-      <a href="#profile/${b.id}" class="btn">View Profile</a>
-    </div>`).join('') || `<p>No matches found.</p>`;
-}
-
-function renderProfile(app, id) {
-  const b = businesses.find(item => item.id === id);
-  if (!b) return;
-  app.innerHTML = `
-    <a href="#directory" class="btn btn-back">⬅ Back</a>
-    <div class="card">
-      <img src="${b.image}">
-      <h1>${b.name}</h1>
-      <p><strong>Owner:</strong> ${b.owner} | <strong>Location:</strong> ${b.location}</p>
-      <div class="rating">${"★".repeat(b.rating)}</div>
-      <div class="blog-content">${b.blog}</div>
-      <a href="https://wa.me/${b.whatsapp}" class="whatsapp-btn" target="_blank">Message on WhatsApp</a>
-    </div>`;
-}
-
-function renderAbout(app) {
-  app.innerHTML = `<div class="card blog-content"><h2>About ENTER-X</h2><p>ENTER-X is a digital business directory created to bridge the gap between skilled student entrepreneurs and clients across Nigeria. In a competitive market, visibility is everything. We provide a platform where quality service meets convenience.</p>
-    <p>Whether you are looking for a professional photographer in Sokoto or a top-tier fashion designer in Abuja, ENTER-X simplifies the search. We verify our providers to ensure you get the best value for your money.</p>
-    <p><b>ENTER-X — Empowering local skills, connecting Nigeria.</b></p></p></div>`;
-}
-
-function renderContact(app) {
-  app.innerHTML = `
-    <div class="card">
-      <h2>Contact Us</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p>Have questions or want to list your business? Reach out to us via WhatsApp for a quick response!</p>
-          <div class="contact-method">
-            <strong>💬 WhatsApp:</strong><br>
-            <a href="https://wa.me/2349023186414" target="_blank">Chat with us: 09023186414</a>
-          </div>
-          <div class="contact-method">
-            <strong>📧 Email:</strong><br>
-            <a href="mailto:enter-x2020@gmail.com">enter-x2020@gmail.com</a>
-          </div>
-        </div>
-        <div>
-          <form onsubmit="alert('Thank you! Your message has been sent (demo only).'); return false;">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="How can we help you?" rows="4" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-          </form>
-        </div>
-      </div>
-    </div>`;
-}
-
-function renderPrivacy(app) {
-  app.innerHTML = `
-    <div class="card blog-content">
-      <h2>Privacy Policy</h2>
-      <p>Last Updated: January 2026</p>
-      <h3>Data Usage</h3>
-      <p>Effective Date: January 2026. Your privacy is critical to us. ENTER-X collects information such as business names, locations, and contact details to facilitate connections.</p>
-    <p><b>Third-Party Advertising:</b> We use third-party advertising companies (like Google AdSense) to serve ads when you visit our website. These companies may use information about your visits to this and other websites in order to provide advertisements about goods</p>
-    </div>`;
-}
-
-window.addEventListener('hashchange', router);
-window.addEventListener('load', router);
-</script>
 
 </body>
 </html>

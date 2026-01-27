@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Business Profile | ENTER-X</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>ENTER-X</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="directory.html">Directory</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="privacy.html">Privacy</a>
+        </nav>
+    </header>
+
+    <div class="container" id="profile-content">
+        <p style="text-align:center;">Loading profile...</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 ENTER-X Nigeria. Empowering Student Entrepreneurs.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script>
+        window.onload = () => {
+            const params = new URLSearchParams(window.location.search);
+            const bizId = params.get('id');
+            const container = document.getElementById('profile-content');
+
+            if (typeof businesses !== 'undefined' && bizId) {
+                const b = businesses.find(x => x.id === bizId);
+                
+                if(b) {
+                    container.innerHTML = `
+                        <a href="directory.html" style="text-decoration:none; color:var(--primary); font-weight:bold; display:inline-block; margin-bottom:15px;">← Back to Directory</a>
+                        <div class="card">
+                            <img src="${b.image}" alt="${b.name}" style="width:100%; border-radius:15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                            <h1 style="color:var(--primary); margin:10px 0;">${b.name}</h1>
+                            <p style="font-size:18px;"><strong>Owner:</strong> ${b.owner} | <strong>Location:</strong> ${b.location}</p>
+                            <div class="blog-content" style="margin-top:20px; border-top:1px solid #eee; padding-top:20px;">
+                                ${b.blog}
+                            </div>
+                            <a href="https://wa.me/${b.whatsapp}" class="whatsapp-btn" target="_blank">Connect on WhatsApp</a>
+                        </div>`;
+                } else {
+                    container.innerHTML = `
+                        <div class="card" style="text-align:center;">
+                            <h2>Profile Not Found</h2>
+                            <p>We couldn't find the business you're looking for.</p>
+                            <a href="directory.html" class="btn">Back to Directory</a>
+                        </div>`;
+                }
+            } else {
+                container.innerHTML = `<p style="text-align:center; color:red;">Error: Database not found. Please check data.js file.</p>`;
+            }
+        };
+    </script>
+</body>
+</html>
