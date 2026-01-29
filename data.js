@@ -138,5 +138,34 @@ const businesses = [
         <li><strong>Environmental Signage:</strong> Architectural signage for retail stores, hubs, and stadiums, ensuring brand presence at any scale.</li>
       </ul>`
   },
+  {
+    id: "mansurs-stitches",
+    name: "Mansur's Stitches ✂️",
+    owner: "Mansur Musa",
+    category: " Fashion",
+    location: "Kebbi and Niger State",
+    rating: 5,
+    stars: "★★★★★",
+    whatsapp: "2347035413244",
+    image:"https://i.ibb.co/6c5JpCfX/Screenshot-20260129-105024.png",
+    blog: `<p><strong>Mansur's Stitches</strong> is a distinguished fashion house dedicated to the art of bespoke tailoring and contemporary design. Serving a diverse clientele across <strong>Kebbi and Niger State</strong>, we specialize in transforming quality fabrics into masterpieces that define elegance and individual style.</p>
+           <p>Our brand is built on a foundation of precision, creativity, and a deep understanding of African and modern fashion trends. Whether it is traditional attire, corporate wear, or custom native styles, every stitch is handled with the utmost care to ensure a perfect fit and a premium finish. At Mansur's Stitches, we don't just sew clothes; we craft confidence.</p>`
+},
+{
+    id: "alicias-fashion-design-enterprise",
+    name: "Alicia's Fashion Design Enterprise 👗✨",
+    owner: "Alice",
+    category: "Fashion",
+    location: "Sokoto",
+    rating: 5,
+    stars: "★★★★★",
+    whatsapp: "2347067688757",
+    image: "https://i.ibb.co/kVrwwHC9/Screenshot-20260129-104729.png",
+    blog: `<p>Welcome to <strong>Alicia's Fashion Design Enterprise</strong>, where we turn premium fabrics into wearable art. Based in the heart of <strong>Sokoto</strong>, our atelier is dedicated to the modern woman and man who demand nothing less than perfection. We don’t just follow trends; we set them by blending timeless African heritage with contemporary "runway-ready" aesthetics.</p>
+           <p>✨ <strong>Why Choose Alicia?</strong><br>
+           Every garment we produce is a result of meticulous attention to detail—from the initial sketch to the final hand-stitched finish. Whether you are looking for a show-stopping <strong>Aso-Ebi</strong>, a sophisticated corporate suit, or a breathtaking bridal ensemble, we guarantee a silhouette that flatters your form and boosts your confidence.</p>
+           <p>At Alicia's, we believe that <em>style is a way to say who you are without speaking</em>. Let us help you make a bold statement. Your journey to an impeccable wardrobe starts with a single stitch. 🧵💎</p>`
+},
 ];
+
 
