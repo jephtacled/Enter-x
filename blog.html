@@ -6,28 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <style>
-        .container { padding-top: 20px; padding-bottom: 40px; }
-        .blog-card { margin-bottom: 50px; padding: 30px; display: block; }
+        .container { display: flex; flex-wrap: wrap; gap: 30px; padding: 20px; max-width: 1200px; margin: 0 auto; }
+        .main-content { flex: 2; min-width: 300px; }
+        .sidebar { flex: 1; min-width: 250px; }
+        .blog-card { margin-bottom: 50px; padding: 30px; display: block; border-radius: 15px; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         .blog-content h3 { margin-top: 25px; color: #333; font-size: 1.4rem; }
-        .blog-content p { line-height: 1.7; color: #444; margin-bottom: 15px; }
-        .cta-box { background: #eef2f7; padding: 25px; border-radius: 12px; margin-top: 30px; border-left: 5px solid var(--primary); }
+        .blog-content p { line-height: 1.8; color: #444; margin-bottom: 15px; }
+        .cta-box { background: #eef2f7; padding: 25px; border-radius: 12px; margin-top: 30px; border-left: 5px solid #007bff; }
+        .btn { display: inline-block; background: #007bff; color: white !important; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; transition: 0.3s; margin-top: 10px; }
+        .btn:hover { background: #0056b3; transform: translateY(-2px); }
+        .category-box { background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 20px; }
+        .category-tag { display: inline-block; background: #f0f0f0; padding: 8px 15px; border-radius: 20px; font-size: 0.85rem; margin: 5px; color: #555; text-decoration: none; transition: 0.3s; }
+        .category-tag:hover { background: #007bff; color: white; }
+        #view-all-btn { display: none; margin-bottom: 20px; background: #333; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; width: fit-content; }
         .date-author { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
-        
-        /* Back button styling */
-        #view-all-btn {
-            display: none;
-            margin-bottom: 20px;
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            width: fit-content;
-        }
-
-        /* Utility class to hide articles */
         .hidden { display: none !important; }
+        @media (max-width: 768px) { .container { flex-direction: column; } .sidebar { order: 2; } }
     </style>
 </head>
 <body>
@@ -37,73 +31,107 @@
             <a href="index.html">Home</a>
             <a href="directory.html">Directory</a>
             <a href="blog.html">Blog</a>
+            <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
             <a href="privacy.html">Privacy</a>
         </nav>
     </header>
 
     <div class="container">
-        <a href="blog.html" id="view-all-btn">← View All Posts</a>
+        <main class="main-content">
+            <a href="blog.html" id="view-all-btn">← Back to All Posts</a>
 
-        <article class="card blog-card blog-content" id="survival-guide">
-            <h1 style="color: var(--primary);">The Side-Hustle Survival Guide: Balancing Books and Business in Nigeria</h1>
-            <p class="date-author"><em>By ENTER-X Editorial Team | January 2026</em></p>
-            
-            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" alt="Student working on laptop" style="width:100%; border-radius:15px; margin-bottom: 25px;">
+            <article class="card blog-card blog-content" id="cac-guide">
+                <h1 style="color: #007bff;">How to Register Your Side-Hustle with CAC: A 2026 Guide for Nigerian Students</h1>
+                <p class="date-author"><em>By ENTER-X Editorial Team | January 2026</em></p>
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80" alt="Legal documents" style="width:100%; border-radius:15px; margin-bottom: 25px;">
+                <p>Registering with the Corporate Affairs Commission (CAC) is no longer just for "big companies." In 2026, the Nigerian digital economy requires every serious entrepreneur to have a legal identity. For student entrepreneurs, this is the bridge between a "campus hustle" and a sustainable brand.</p>
+                
+                <h3>Why Every Student Needs CAC Registration</h3>
+                <p>The primary reason is financial inclusion. Most modern Fintechs and traditional banks now mandate a CAC certificate to open a corporate business account. Without this, you are forced to use your personal account, which makes it difficult to track your Return on Investment (ROI) and limits your ability to receive large-scale payments from corporate clients.</p>
+                
+                <h3>The Registration Process</h3>
+                <p>The process has been simplified through the CAC's online portal. You start with a Name Search (₦1,000) to ensure your chosen brand name isn't already in use. Once approved, you can register as a Business Name, which is the most cost-effective path for students. You will need your National Identification Number (NIN), a passport photograph, and a valid means of identification.</p>
+                
+                <div class="cta-box">
+                    <h4>Boost Your Professionalism</h4>
+                    <p>Verified businesses on ENTER-X get 2x more visibility. Get your CAC ready and join our directory today.</p>
+                    <a href="contact.html" class="btn">Register My Business</a>
+                </div>
+            </article>
 
-            <p>Running a business while chasing a degree in Nigeria is often described as an "extreme sport." Between the stress of 8 AM lectures, impromptu tests, and the constant struggle for reliable power and data, student entrepreneurs are the real MVPs. However, the dream of becoming the next big CEO shouldn't come at the cost of your CGPA. Here is the ultimate survival guide to balancing both worlds successfully.</p>
+            <article class="card blog-card blog-content" id="digital-skills">
+                <h1 style="color: #007bff;">Top 5 High-Income Digital Skills for Nigerian Students in 2026</h1>
+                <p class="date-author"><em>By ENTER-X Editorial Team | January 2026</em></p>
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Tech skills" style="width:100%; border-radius:15px; margin-bottom: 25px;">
+                <p>A degree is a foundation, but in 2026, skills are the currency. Nigerian students are increasingly dominating the global remote work market by mastering high-demand digital skills that pay in stable currencies.</p>
+                
+                <h3>1. AI Prompt Engineering & Automation</h3>
+                <p>As AI becomes central to business, the ability to effectively "communicate" with AI models to generate marketing copy, code, or business strategies is the most sought-after skill of the year.</p>
+                
+                <h3>2. UI/UX Design (Product Design)</h3>
+                <p>With the explosion of Nigerian startups, the demand for designers who can create seamless user experiences is at an all-time high. Mastering tools like Figma allows you to work for tech hubs in Lagos or remote companies globally.</p>
+                
+                <div class="cta-box">
+                    <h4>Ready to Showcase Your Skills?</h4>
+                    <p>Whether you're a designer, writer, or dev, ENTER-X is the platform to find your next big client.</p>
+                    <a href="contact.html" class="btn">Get Started Now</a>
+                </div>
+            </article>
 
-            <h3>1. Treat Your Business Like a Course</h3>
-            <p>One of the biggest mistakes student entrepreneurs make is working only "when they have free time." In a Nigerian university, you are never truly free. To succeed, you must treat your business with the same discipline as a 4-unit course. Map out your week. If you have a break between lectures on Tuesdays and Thursdays, dedicate those hours specifically to client communication or production. Consistency is better than intensity.</p>
+            <article class="card blog-card blog-content" id="survival-guide">
+                <h1 style="color: #007bff;">The Side-Hustle Survival Guide: Balancing Books and Business in Nigeria</h1>
+                <p class="date-author"><em>By ENTER-X Editorial Team | January 2026</em></p>
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80" alt="Student working" style="width:100%; border-radius:15px; margin-bottom: 25px;">
+                <p>Running a business while chasing a degree is an extreme sport. Between 8 AM lectures, unpredictable power outages, and exams, student entrepreneurs in Nigeria face a unique set of challenges. However, with the right strategy, it is possible to maintain a high CGPA while growing a profitable business.</p>
 
-            <h3>2. Leverage Your Campus Environment</h3>
-            <p>Your university is not just a place to learn; it is a massive market and a resource hub. Use the school library for quiet work hours, take advantage of any available campus Wi-Fi for heavy uploads, and most importantly, network. Your coursemates and hostel-mates are your first customers. If you can solve a problem for someone in your department, word-of-mouth will spread faster than any paid Instagram ad ever could.</p>
+                <h3>1. Master the Art of Time Blocking</h3>
+                <p>Don't work "when you have free time"—you will never have any. Instead, block out specific hours in your calendar for your business. For instance, 6 PM to 9 PM daily could be your "client zone." During this time, ignore your social media and focus solely on fulfilling orders or marketing.</p>
 
-            <h3>3. The Power of Automation and ENTER-X</h3>
-            <p>You cannot be online 24/7, especially during a 3-hour laboratory practical or a marathon lecture. This is where automation comes in. Use WhatsApp Business for "Away Messages" and "Quick Replies." Better yet, ensure your <strong>ENTER-X profile</strong> is fully updated with your portfolio and price list. This allows potential clients to see what you offer and leave a message without you needing to pick up the phone during class.</p>
+                <h3>2. Leverage Automation</h3>
+                <p>Use technology to work for you while you are in the classroom. Set up WhatsApp Business "Away Messages" and "Quick Replies." This ensures that when a client messages you during a lecture, they receive an immediate response, maintaining your professional image even when you're busy studying.</p>
 
-            <h3>4. Know When to Say "No" (The Exam Rule)</h3>
-            <p>Protecting your brand also means knowing your limits. During mid-term tests or final exam weeks, it is okay to put your business on a "soft pause." Communicate with your regular clients two weeks in advance, letting them know you are taking a break for academic reasons. It is much better to decline a job than to accept it and deliver poor quality because you were cramming for an exam at 2 AM.</p>
+                <div class="cta-box">
+                    <h4>Grow Your Business Sustainably</h4>
+                    <p>Join a community that understands the hustle. Register your business on ENTER-X today.</p>
+                    <a href="contact.html" class="btn">Join the Directory</a>
+                </div>
+            </article>
 
-            <h3>5. Batching Your Content and Workflow</h3>
-            <p>Nigerian students deal with unpredictable schedules. To stay ahead, use your weekends to "batch" your work. Spend Saturday taking all your product photos or writing your social media captions for the week. This way, even if you have a hectic Wednesday with zero free time, your business stays active and visible online because the work was already done in advance.</p>
+            <article class="card blog-card blog-content" id="hiring-benefits">
+                <h1 style="color: #007bff;">5 Benefits of Hiring Student Entrepreneurs in Nigeria</h1>
+                <p class="date-author"><em>By ENTER-X Editorial Team | January 2026</em></p>
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Students collaborating" style="width:100%; border-radius:15px; margin-bottom: 25px;">
+                <p>Why should businesses and individuals hire student entrepreneurs over established agencies? The answer lies in the unique blend of innovation, agility, and cost-effectiveness that student-led brands bring to the table.</p>
 
-            <div class="cta-box">
-                <h4 style="margin-top:0;">Want to grow your brand?</h4>
-                <p>Stop stressing about finding clients and focus on your studies. Register your business on ENTER-X today and let us bring the customers to you.</p>
-                <a href="register.html" class="btn">Register My Business</a>
+                <h3>1. Fresh and Innovative Perspectives</h3>
+                <p>Students are "digital natives." They are at the forefront of every new trend on TikTok, Instagram, and AI. When you hire a student, you aren't just getting a service; you're getting a fresh perspective that can make your brand appeal to a younger, more modern audience.</p>
+
+                <h3>2. Unbeatable Cost-Effectiveness</h3>
+                <p>Because most student entrepreneurs operate from hostels or home offices, they don't have the heavy overhead costs of large agencies. This allows them to offer high-quality services—like graphic design, tutoring, or fashion styling—at a fraction of the corporate price.</p>
+
+                <h3>3. Exceptional Dedication</h3>
+                <p>For a student entrepreneur, every client is a major milestone for their portfolio. They are often more willing to go the extra mile to ensure your satisfaction, as they are building a reputation that will serve them long after graduation.</p>
+
+                <div class="cta-box">
+                    <h4>Support the Future of Nigeria</h4>
+                    <p>Looking for quality services at great prices? Browse our directory of vetted student businesses.</p>
+                    <a href="directory.html" class="btn">Browse Students</a>
+                </div>
+            </article>
+        </main>
+
+        <aside class="sidebar">
+            <div class="category-box">
+                <h3 style="margin-top:0;">Explore Topics</h3>
+                <a href="#cac-guide" class="category-tag">Legal & CAC</a>
+                <a href="#digital-skills" class="category-tag">Tech & Skills</a>
+                <a href="#survival-guide" class="category-tag">Student Tips</a>
+                <a href="#hiring-benefits" class="category-tag">Business Growth</a>
+                <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+                <a href="contact.html" style="color: #007bff; font-weight: bold; text-decoration: none; display: block;">Get Listed Today →</a>
             </div>
-        </article>
-
-        <article class="card blog-card blog-content" id="hiring-benefits">
-            <h1 style="color: var(--primary);">5 Benefits of Hiring Student Entrepreneurs in Nigeria</h1>
-            <p class="date-author"><em>By ENTER-X Editorial Team | January 2026</em></p>
-            
-            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Students collaborating" style="width:100%; border-radius:15px; margin-bottom: 25px;">
-
-            <p>In recent years, the Nigerian economic landscape has seen a massive surge in "hustle culture," particularly within universities. From the campuses of Unilag to ABU Zaria, students are no longer just studying; they are building brands. But why should you, as a client, choose a student entrepreneur over an established agency? Here are five compelling reasons.</p>
-
-            <h3>1. Unmatched Innovation and Fresh Perspectives</h3>
-            <p>Student entrepreneurs are digital natives. They spend their time at the intersection of academic theory and real-world digital trends. When you hire a student graphic designer or web developer, you aren't just getting a service; you're getting the latest design aesthetics and technical shortcuts that older agencies might overlook. They understand what appeals to the younger generation because they are the younger generation.</p>
-
-            <h3>2. Highly Competitive Pricing</h3>
-            <p>Let’s be practical: students have lower overhead costs. They don't have large office rents, massive electricity bills for skyscrapers, or huge payrolls to cover. This allows them to offer high-quality services at a fraction of the price of corporate firms. For small business owners in Nigeria, this is the most cost-effective way to get professional branding, photography, or social media management done without breaking the bank.</p>
-
-            <h3>3. Flexibility and Personal Dedication</h3>
-            <p>Unlike big firms that treat you like just another ticket number in a system, student entrepreneurs often view every project as a major portfolio piece. Because they are building their reputation from the ground up, they are more likely to offer personalized revisions and work around your schedule. Their reputation is everything, so they often go the extra mile—working late nights—to ensure you are 100% satisfied with the result.</p>
-
-            <h3>4. Driving the Local Economy</h3>
-            <p>By hiring a student from a local university, you are directly investing in the future of the Nigerian economy. This support helps these students pay their tuition, buy better equipment (like laptops and cameras), and potentially create jobs for other graduates in the future. It’s a form of community building that strengthens our local talent pool and reduces the "brain drain" by encouraging local success.</p>
-
-            <h3>5. Tech-Savviness and Speed</h3>
-            <p>Students are masters of the "speed-to-market" approach. Using modern AI tools, the latest software, and mobile-first strategies, they can often deliver projects faster than traditional businesses that are bogged down by bureaucracy and long approval chains. If you need a flyer for an event next week or a quick edit on a promotional video, a student creator is your best bet for a rapid turnaround.</p>
-
-            <div class="cta-box">
-                <h4 style="margin-top:0;">Ready to hire?</h4>
-                <p>Browse our directory today and find verified student talent ready to take your project to the next level. Support a student, grow your business.</p>
-                <a href="directory.html" class="btn">Go to Directory</a>
-            </div>
-        </article>
+        </aside>
     </div>
 
     <footer>
@@ -111,28 +139,26 @@
     </footer>
 
     <script>
-        function showCorrectArticle() {
+        function handleRouting() {
             const hash = window.location.hash;
             const articles = document.querySelectorAll('article');
             const backBtn = document.getElementById('view-all-btn');
-            
-            if (hash) {
-                // Hide all and show target
-                articles.forEach(art => art.classList.add('hidden'));
+
+            if (hash && hash.length > 1) {
                 const target = document.querySelector(hash);
                 if (target) {
+                    articles.forEach(art => art.classList.add('hidden'));
                     target.classList.remove('hidden');
-                    backBtn.style.display = 'block'; // Show "View All" button
+                    backBtn.style.display = 'block';
+                    window.scrollTo(0, 0);
                 }
             } else {
-                // Show all
                 articles.forEach(art => art.classList.remove('hidden'));
-                backBtn.style.display = 'none'; // Hide "View All" button
+                backBtn.style.display = 'none';
             }
         }
-
-        window.addEventListener('load', showCorrectArticle);
-        window.addEventListener('hashchange', showCorrectArticle);
+        window.addEventListener('hashchange', handleRouting);
+        window.addEventListener('load', handleRouting);
     </script>
 </body>
 </html>
