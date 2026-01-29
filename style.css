@@ -6,28 +6,143 @@
   --white: #ffffff; 
   --hero-bg: linear-gradient(135deg, #0f4c81 0%, #1a73e8 100%);
 }
+
 * { box-sizing: border-box; font-family: "Segoe UI", Roboto, sans-serif; }
-body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.8; }
 
-header { background: var(--primary); color: white; padding: 20px; position: sticky; top: 0; z-index: 100; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+body { margin: 0; background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden; }
+
+/* HEADER - Better Spacing on Desktop */
+header { 
+    background: var(--primary); 
+    color: white; 
+    padding: 15px 5%; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+}
+
 header h1 { margin: 0; font-size: 24px; letter-spacing: 2px; }
-nav { margin-top: 10px; }
-nav a { color: #ffd966; margin: 0 12px; text-decoration: none; font-weight: 600; font-size: 14px; text-transform: uppercase; }
 
-/* Professional Welcome Section */
-.hero { background: var(--hero-bg); color: white; padding: 80px 20px; text-align: center; }
-.hero h2 { font-size: 32px; margin: 0 0 15px 0; }
-.hero p { font-size: 18px; max-width: 700px; margin: 0 auto 30px; opacity: 0.9; }
+nav { margin-top: 12px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
 
-.container { max-width: 900px; margin: 0 auto; padding: 20px; min-height: 80vh; }
-.card { background: var(--white); border-radius: 20px; padding: 30px; margin-bottom: 40px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); border-left: 8px solid var(--accent); }
-.card img { width: 100%; border-radius: 15px; margin-bottom: 25px; }
+nav a { 
+    color: #ffd966; 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 13px; 
+    text-transform: uppercase; 
+    transition: 0.3s;
+}
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 15px; margin: 30px 0; }
-.box { background: white; padding: 25px; border-radius: 15px; text-align: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; color: var(--primary); font-weight: bold; }
+nav a:hover { color: white; }
+
+/* HERO SECTION */
+.hero { background: var(--hero-bg); color: white; padding: 60px 20px; text-align: center; }
+.hero h2 { font-size: clamp(24px, 5vw, 40px); margin: 0 0 15px 0; }
+.hero p { font-size: 18px; max-width: 800px; margin: 0 auto 30px; opacity: 0.9; }
+
+/* MAIN CONTAINER - The Fix for Desktop */
+.container { 
+    max-width: 1200px; /* Increased from 900px */
+    margin: 0 auto; 
+    padding: 20px; 
+    min-height: 80vh; 
+}
+
+/* CARD STYLING */
+.card { 
+    background: var(--white); 
+    border-radius: 15px; 
+    padding: 25px; 
+    margin-bottom: 30px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+    border-left: 6px solid var(--accent); 
+}
+
+.card img { 
+    width: 100%; 
+    max-height: 500px; 
+    object-fit: cover; 
+    border-radius: 12px; 
+    margin-bottom: 20px; 
+}
+
+/* DIRECTORY GRID - Professional Desktop Layout */
+.grid { 
+    display: grid; 
+    /* This makes it 1 col on mobile, 2 on tablet, 3 on desktop */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 25px; 
+    margin: 30px 0; 
+}
+
+/* Category Boxes on Home Page */
+.box-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); 
+    gap: 15px; 
+    margin: 30px 0; 
+}
+
+.box { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 12px; 
+    text-align: center; 
+    cursor: pointer; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+    transition: 0.3s; 
+    color: var(--primary); 
+    font-weight: bold; 
+    border: 1px solid #eee;
+}
+
 .box:hover { background: var(--primary); color: white; transform: translateY(-5px); }
 
-.btn { display: inline-block; background: var(--accent); color: #000; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; text-align: center; border: none; cursor: pointer; }
-.whatsapp-btn { background: #25d366; color: white; display: block; text-align: center; padding: 18px; margin-top: 30px; border-radius: 12px; text-decoration: none; font-weight: bold; }
+/* BUTTONS */
+.btn { 
+    display: inline-block; 
+    background: var(--accent); 
+    color: #000; 
+    padding: 12px 28px; 
+    border-radius: 50px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: 0.3s; 
+    border: none; 
+}
 
-footer { text-align: center; padding: 50px 20px; background: var(--primary); color: white; margin-top: 60px; }
+.btn:hover { transform: scale(1.05); filter: brightness(1.1); }
+
+.whatsapp-btn { 
+    background: #25d366; 
+    color: white; 
+    display: block; 
+    text-align: center; 
+    padding: 15px; 
+    margin-top: 20px; 
+    border-radius: 10px; 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover { background: #1ebe57; }
+
+/* FOOTER */
+footer { text-align: center; padding: 40px 20px; background: var(--primary); color: white; margin-top: 60px; }
+
+/* MEDIA QUERIES for Desktop Improvements */
+@media (min-width: 768px) {
+    header { 
+        flex-direction: row; 
+        justify-content: space-between; 
+        padding: 15px 8%; 
+    }
+    nav { margin-top: 0; }
+    .hero { padding: 100px 20px; }
+}
